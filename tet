@@ -1,0 +1,27 @@
+#include"stdio.h"
+#include"string.h"
+void main()
+{
+	printf("Please input a sentence:\n");
+	char a[1000];
+	gets(a);
+	printf("Please input a word:\n");
+	char b[100];
+	gets (b);
+	strlwr(a);
+	strlwr(b);
+	int wlen=strlen(b),slen=strlen(a),c=0;
+	int i,j;
+	for(i=0;i<=slen-wlen;i++)
+	{
+		char *tempw=new char[wlen+1];
+		tempw[wlen]='\0';
+		for(j=0;j<wlen;j++)
+		{
+			tempw[j]=a[i+j];
+		}
+		if (strcmp(tempw,b)==0) c++;
+	}
+	printf("有：%d个\n",c);
+
+}
